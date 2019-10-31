@@ -1,0 +1,97 @@
+<%-include partiels/head%>
+    <%-include partiels/nav%>
+        <link rel="stylesheet" type="text/css" href="/stylesheets/inscription.css">
+
+
+        <!--FORMULAIRE D INSCRIPTION CANDIDAT-->
+        <div class="container border border-dark my-5 clearfix formulaire">
+            <h2>Entreprise</h2>
+            <h6 class="text-danger">
+                <%=erreur%>
+            </h6>
+            <form action="/entreprise/new" method="POST" class="py-1">
+
+                <!--NOM,PRENOM-->
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="nomEntreprise">Nom de l'Entreprise</label>
+                        <input type="text" class="form-control" id="inputNom" name="nomEntreprise" placeholder="Nom Entreprise">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputInter">Interlocuteur</label>
+                        <input type="text" class="form-control" id="inputInter" name="interlocuteur" placeholder="Nom de l'interlocuteur">
+                    </div>
+                </div>
+
+                <!--DATE DE NAISSANCE-->
+                <div class="form-row">
+                    <div class="form-group col-md-3">
+                        <label for="inputSiret">Numéro Siret</label>
+                        <input type="text" class="form-control" id="siret" name="siret" placeholder="Numéro Siret">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="inputSiret">Code APE</label>
+                        <input type="text" class="form-control" id="ape" name="codeAPE" placeholder="Code APE">
+                    </div>
+                </div>
+
+                <!--ADRESSE,VILLE-->
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputAddress">Adresse</label>
+                        <input type="text" class="form-control" id="inputAddresse" name="adresse" placeholder="Votre Adresse">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="inputCity">Ville</label>
+                        <input type="text" class="form-control" id="inputCity" name="ville">
+                    </div>
+                </div>
+                <!--CODE POSTAL -->
+                <div class="form-row">
+                    <div class="form-group col-md-2">
+                        <label for="inputCp">Code Postal</label>
+                        <input type="text" class="form-control" id="cp" name="codePostal">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="inputTel">Téléphone</label>
+                        <input type="tel" class="form-control" id="tel" name="phone">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="inputWeb">Site Web</label>
+                        <input type="text" class="form-control" id="site" name="internet">
+                    </div>
+                </div>
+
+                <!--EMAIL-->
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label for="inputEmail4">Email</label>
+                        <input type="email" class="form-control" id="inputEmail4" name="email" placeholder="Votre email">
+                    </div>
+
+                    <!--PASSWORD-->
+                    <div class="form-group col-md-4">
+                        <label for="inputPassword">Mot de passe</label>
+                        <input type="password" id="inputPassword" name="motDePasse" class="form-control" aria-describedby="passwordHelpInline">
+                        <small id="passwordHelpInline" class="text-muted">
+                        doit comporter entre 8-20 characteres de long.
+                    </small>
+                    </div>
+
+                    <div class="form-group col-md-4">
+                        <label for="inputPassword">Confirmer mot de passe</label>
+                        <input type="password" id="inputPassword" class="form-control" aria-describedby="passwordHelpInline">
+                        <small id="passwordHelpInline" class="text-muted">
+                        <!-- Confirmez votre mot de passe. -->
+                    </small>
+                    </div>
+                </div>
+
+                <!--CONFIRMATION D INSCRIPTION-->
+                <div class="form-row">
+                    <button type="submit" class="col-1 btn btn-primary m-2">Valider</button>
+                </div>
+            </form>
+        </div>
+
+        <%-include partiels/foot%>

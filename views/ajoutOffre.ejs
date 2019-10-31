@@ -1,0 +1,127 @@
+<%-include partiels/head%>
+    <%-include partiels/nav%>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-8 offset-xl-2 py-5">
+                    <form id="contact-form" method="post" action="/offre/new" role="form">
+                        <div class="controls">
+
+                            <!--TITRE DE L OFFRE-->
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="form_name">Titre d' Offre</label>
+                                        <input id="form_name" type="text" name="titreOffre" class="form-control" placeholder="Inscrivez le titre d offre" required="required" data-error="type d offre demandé">
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!--DEBUT & FIN DE MISSION -->
+                            <div class="form-row">
+                                <div class="form-group col-md-3">
+                                    <label for="inputNaissance">Date de début</label>
+                                    <input type="date" class="form-control" id="dateDebut" name="dateDebut" placeholder="jj/mm/aaaa">
+                                </div>
+                                <div class="form-group col-md-3 offset-md-3 pl-3 ">
+                                    <label for="inputNaissance">Date de fin</label>
+                                    <input type="date" class="form-control" id="dateFin" name="dateFin" placeholder="jj/mm/aaaa">
+                                </div>
+                            </div>
+                            <!--EXPERIENCE DEMANDEE -->
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="exp">Expériences demandées</label>
+                                        <select class="form-control" id="exp" name="exp" required="required">
+                                        <option value="">Choisissez une option</option>
+                                        <% 
+                                            for (i=0;i<experiences.length;i++){
+
+                                    %>
+                                        <option value="<%=experiences[i].idexperience%>"><%=experiences[i].interval%></option>
+                                        <%}%>
+                                    </select>
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+                                <!--TYPE D ACTIVITEE-->
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="form_need">Type d' activité</label>
+                                        <select class="form-control" id="activite" name="activite" required="required">
+                                        <option value="">Choisissez une option</option>
+                                        <% 
+                                            for (i=0;i<activites.length;i++){
+
+                                    %>
+                                        <option value="<%=activites[i].idsecteurActivite%>"><%=activites[i].nom%></option>
+                                        <%}%>
+                                    </select>
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="form_need">Niveau d étude</label>
+                                        <select class="form-control" id="etude" name="etude" required="required">
+                                            <option value="">Choisissez une option</option>
+                                            <% 
+                                                for (i=0;i<etudes.length;i++){
+    
+                                        %>
+                                            <option value="<%=etudes[i].idniveauEtudes%>"><%=etudes[i].intitule%></option>
+                                            <%}%>
+                                        </select>
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="form_need">Type d'emploi</label>
+                                        <select class="form-control" id="type" name="type" required="required">
+                                                <option value="">Choisissez une option</option>
+                                                <% 
+                                                    for (i=0;i<types.length;i++){
+        
+                                            %>
+                                                <option value="<%=types[i].idType%>"><%=types[i].nomType%></option>
+                                                <%}%>
+                                            </select>
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--ANNONCE A REMPLIR-->
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="formAnnonce">Annonce</label>
+                                        <textarea id="formAnnonce" name="message" class="form-control" placeholder="Votre recherche" rows="4" required="required" data-error="merci de remplir ce champ"></textarea>
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <input type="submit" class="btn btn-success btn-send" value="Valider">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+        <%-include partiels/foot%>

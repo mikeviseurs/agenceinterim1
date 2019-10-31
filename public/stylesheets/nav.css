@@ -1,0 +1,32 @@
+.nav-link{
+    color: #ffffff;
+    font-weight: 900;
+}
+
+span.nav-item{
+    color: #ffffff;
+    font-style: italic;
+    font-weight: 700;
+}
+
+nav a:hover, nav a:focus, nav a:active, nav a:link{
+    text-decoration: none;
+    color: #ffffff;
+    
+}
+
+a:hover.nav-item{
+    background-color: rgb(12, 86, 136);
+    transition-duration: 1s;
+    transition-timing-function: ease-in-out;
+}
+
+/* .nav-link.candidature a:hover, .nav-link.candidature a:focus, .nav-link.candidature a:active, .nav-link.candidature a:link{
+    text-decoration: none;
+    color: #000000;
+} */
+
+.nav-link.candidature{
+    color: #ffffff;
+    font-weight: 900;
+}

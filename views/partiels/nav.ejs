@@ -1,0 +1,87 @@
+<div class="sticky-top">
+    <nav class="navbar navbar-dark bg-primary pt-0 pb-0">
+        <!--HEADER-->
+        <a href="/"><span class="navbar-brand">Interim</span></a>
+        <% if(!session.type){%>
+            <%}else{%>
+                <span class="nav-item">Bienvenue
+            <%=session.nom%>
+        </span>
+                <%}%>
+
+
+                    <ul class="nav float-right">
+                        <% if(!session.type){%>
+                            <li>
+                                <a class="nav-link" href="#" data-toggle="modal" data-target="#exampleModal">Connexion</a>
+                            </li>
+                            <li class="dropdown">
+                                <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">S'inscire</a>
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="/candidat/new">Candidat</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="/entreprise/new">Entreprise</a>
+                                </div>
+                            </li>
+                            <%}else{%>
+                                <li><a class="nav-link" href="/logout">Déconnexion</a></li>
+                                <%}%>
+                    </ul>
+    </nav>
+</div>
+
+<div class="container p-0">
+    <!--NAVBAR-->
+    <nav class="nav nav-pills nav-fill navbar-dark bg-primary border-top border-white">
+        <a class="nav-item nav-link border border-white rounded-0 border-bottom-0 border-left-0 p-3" href="/">Accueil</a>
+        <a class="nav-item nav-link border border-white rounded-0 border-bottom-0 p-3" href=<% switch (session.type) { case 'candidat': %>"/candidat/offre">Offres compatibles<%
+                break;
+        case 'entreprise':
+                %>"/entreprise/offre">Vos Offres<%
+            break;
+            default:
+                %>"/offre">Offres d'emploi<%
+                break;
+        }%></a>
+        <a class="nav-item nav-link border border-white rounded-0 border-bottom-0 p-3" href=<% switch (session.type) { case 'candidat': %>"/candidat">Profil<%
+                break;
+        case 'entreprise':
+                %>"/entreprise">Profil<%
+            break;
+            default:
+                %>"/entreprise/info">Vous recrutez ?<%
+                break;
+        }%></a>
+        <a class="nav-item nav-link border border-white rounded-0 border-bottom-0 border-right-0 p-3" href="/info">Nos services</a>
+    </nav>
+</div>
+<div class="clearfix"></div>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Connexion</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <form action="/login" method="post">
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="identifiant">Identifiant</label>
+                        <input type="text" class="text form-control" id='identifiant' name='identifiant'>
+                        <small id="emailHelp" class="form-text text-muted">Candidat: E-mail / Entreprise : numéro siret</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Mot de Passe</label>
+                        <input type="password" class=" form-control" name="password" id="password">
+                        <small id="passwordHelp" class="form-text text-danger"><%=session.error%></small>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Valider</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

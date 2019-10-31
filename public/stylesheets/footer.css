@@ -1,0 +1,29 @@
+.footer{
+    background-color: rgb(12, 86, 136);
+}
+
+input::placeholder{
+    color: rgb(195, 195, 195) !important;
+}
+
+ul, .reseaux{
+    list-style: none;
+    line-height: 2em;
+}
+
+#iconeFooter{
+    max-width: 10%;
+    height: auto;
+}
+
+#iconeFooterReseaux {
+    width: 30%;
+    height: auto;
+}
+
+#inputAgence{
+    border-top: hidden;
+    border-left: hidden;
+    border-right: hidden;
+    background-color:transparent;
+}

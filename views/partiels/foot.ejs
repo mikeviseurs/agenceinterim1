@@ -1,0 +1,88 @@
+<div class="container-fluid pb-4 clearfix footer">
+    <div class="d-flex justify-content-around text-light pt-3">
+        <div class="Contact">
+            <h1 class="nomEntreprise pb-2">Intérim</h1>
+            <a class="text-light" href="#">Offre d'emploi</a><br>
+            <label for="inputAgence">Nous trouver:</label>
+            <input type="text" id="inputAgence" class="form-control rounded-0 text-light" placeholder="Votre Agence ?">
+        </div>
+
+        <div class="contact">
+            <h5><u><a class="text-light" href="#">Contact:</a></u></h5>
+            <img id="iconeFooter" src="\images\icones\contact\icons8-téléphone-96.png" alt="icone-téléphone"> 03.21.XX.XX.XX
+            <br>
+            <img id="iconeFooter" src="\images\icones\contact\icons8-email-96.png" alt="icone-mail"> interim@interim.com
+        </div>
+
+        <div class="faq">
+            <h5><u><a class="text-light" href="#">FAQ:</a></u></h5>
+            <ul class="pl-3">
+                <li><a class="text-light" href="#">_ Ceci est une question1 (?)</a></li>
+                <li><a class="text-light" href="#">_ Ceci est une question2 (?)</a></li>
+                <li><a class="text-light" href="#">_ Ceci est une question3 (?)</a></li>
+                <li><a class="text-light" href="#">_ Ceci est une question4 (?)</a></li>
+                <li><a class="text-light" href="#">_ Ceci est une question5 (?)</a></li>
+            </ul>
+        </div>
+
+        <div class="reseaux">
+            <h5><u><a class="text-light" href="#">Nous suivre:</a></u></h5>
+            <!-- <ul class="pl-3">
+                <li><a class="text-light" href="#"><img id="iconeFooterReseaux" src="src\img\icones\icons8-facebook-100.png">Facebook</a></li>
+                <li><a class="text-light" href="#"><img id="iconeFooterReseaux" src="src\img\icones\icons8-twitter-100.png">Twitter</a></li>
+                <li><a class="text-light" href="#"><img id="iconeFooterReseaux" src="src\img\icones\icons8-instagram-100.png">Instagram</a></li>
+                <li><a class="text-light" href="#"><img id="iconeFooterReseaux" src="src\img\icones\icons8-linkedin-100.png">LinkedIn</a></li>
+                <li><a class="text-light" href="#"><img id="iconeFooterReseaux" src="src\img\icones\icons8-lecture-de-youtube-100.png">Youtube</a></li>
+            </ul> -->
+
+            <table>
+                <tbody>
+                    <tr>
+                        <td>
+                            <li>
+                                <a class="text-light" href="#"><img id="iconeFooterReseaux" src="\images\icones\reseaux\icons8-facebook-100.png">Facebook</a>
+                            </li>
+                            <li>
+                                <a class="text-light" href="#"><img id="iconeFooterReseaux" src="\images\icones\reseaux\icons8-twitter-100.png">Twitter</a>
+                            </li>
+                            <li>
+                                <a class="text-light" href="#"><img id="iconeFooterReseaux" src="\images\icones\reseaux\icons8-instagram-100.png">Instagram</a>
+                            </li>
+                        </td>
+                        <td>
+                            <li>
+                                <a class="text-light" href="#"><img id="iconeFooterReseaux" src="\images\icones\reseaux\icons8-linkedin-100.png">LinkedIn</a>
+                            </li>
+                            <li>
+                                <a class="text-light" href="#"><img id="iconeFooterReseaux" src="\images\icones\reseaux\icons8-lecture-de-youtube-100.png">Youtube</a>
+                            </li>
+                            <li>
+                                <a class="text-light" href="#"><img id="iconeFooterReseaux" src="\images\icones\reseaux\icons8-logo-google-100.png">Google+</a>
+                            </li>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<%       if (session.error){%>
+    <script>
+        $('document').ready(function() {
+            $('#exampleModal').modal('show');
+        });
+        // document.getElementById('exempleModal').modal('show');
+    </script>
+    <%
+session.error=null;
+}%>
+        </body>
+
+        </html>

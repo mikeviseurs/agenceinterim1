@@ -1,0 +1,62 @@
+<%-include partiels/head%>
+    <%-include partiels/nav%>
+        <div class="container p-0">
+            <div class="backgroundImage w-100">
+                <!--FONDU NOIR + INPUT RECHERCHE D'OFFRE-->
+                <div class="back-fade  w-100">
+                    <form class="formulaire-recherche" method="POST" action="/offre">
+                        <div class="form-row ml-5">
+                            <div class="form-group col-sm-5 col-md-4 mr-3">
+                                <label class="text-light" for="inputOffre">Trouvez votre future mission:</label>
+                                <input type="text" class="form-control" id="inputOffre" name="inputOffre" aria-describedby="offreHelp" placeholder="Métier, mots-clés, entreprise ...">
+                                <small id="offreHelp" class="form-text text-light">Exemple: Développeur Web, graphiste...</small>
+                            </div>
+                            <div class=" form-group col-sm-5 col-md-3 mr-3">
+                                <label class="text-light" for="inputVille">Ville:</label>
+                                <input type="text" class="form-control" id="inputVille" name="inputVille" aria-describedby="villeHelp" placeholder="Ville, département...">
+                                <small id="villeHelp" class="form-text text-light">Exemple: 62000, Lens...</small>
+                            </div>
+                            <div class="form-group col-md-2 mr-3">
+                                <label class="text-light" for="inputType">Type:</label>
+                                <select id="inputType" name="inputType" class="form-control">
+                                    <option value="%">Tous les Types</option>
+                                    <%for(i=0;i<listeTypes.length;i++){%>
+                                <option value="<%=listeTypes[i].idType%>"><%=listeTypes[i].nomType%></option>
+                                <%}%>
+                            </select>
+                            </div>
+                            <div class="form-inline col-sm-2 mr-3">
+                                <button type="submit" class="btn btn-lg btn-outline-light">Trouver l'offre</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid clearfix activite">
+            <h2 class="text-center pt-2 pb-5 font-weight-bold text-light">Domaine d'activité</h2>
+            <div class="d-flex justify-content-around pb-4">
+                <%for(i=0;i<listeActivites.length;i++){%>
+                    <a class="rounded-circle secteur bg-white text-dark" href="/offre/activite/<%=listeActivites[i].idsecteurActivite%>">
+                        <figure>
+                            <img class="mt-3" src="images\icones\domaines\<%=listeActivites[i].image%>" alt="<%=listeActivites[i].nom%>">
+                            <figcaption>
+                                <%=listeActivites[i].nom%>
+                            </figcaption>
+                        </figure>
+                    </a>
+                    <%}%>
+            </div>
+            <a class="float-right pb-2 text-light" href="#" href="#">Plus de domaines <img id="icones" src="images\icones\icons8-flèche-droite-64.png" alt="icône-flèche"></a>
+        </div>
+
+        <div class="container bg-primary p-0 clearfix">
+            <h2 class="text-center pt-2 pb-5 font-weight-bold text-light">Dernières Offres</h2>
+            <%-include listeOffres%>
+                <div class="text-center">
+                    <a href="/offre"><button type="button" class="btn btn-lg btn-secondary rounded-pill m-2 text-light">Plus d'offres</button></a>
+                </div>
+        </div>
+
+        <%-include partiels/foot%>

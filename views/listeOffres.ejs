@@ -1,0 +1,22 @@
+<% if (listeOffres.length==0){%>
+    <div class="shadow bg-white pt-1 pb-3 pl-2 pr-2 m-1 rounded border border-black clearfix">
+        <h3 class="text-center">Pas d'offre correspondante</h3>
+    </div>
+    <%}else{
+ for(i=0;i<listeOffres.length;i++){%>
+        <div class="shadow bg-white pt-1 pb-3 pl-2 pr-2 m-1 rounded border border-black clearfix">
+            <h3 class="metier">
+                <%=listeOffres[i].titreOffre%>
+            </h3>
+
+            <div class="type ville">
+                <%=listeOffres[i].nomActivite%>
+            </div>
+            <hr>
+            <div class="description">
+                <%=listeOffres[i].description.substr(0,255)%>
+            </div>
+            <a href="/offre/detail/<%=listeOffres[i].idOffre%>"><input type="button" class="rounded-pill btn btn-primary float-right mt-2" value="Accéder à l'offre"></a>
+        </div>
+        <%}
+}%>
